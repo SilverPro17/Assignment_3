@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redesigns: Visualizações Corrigidas</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .main-title {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 32px;
+            margin-bottom: 40px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 20px;
+        }
+        .redesign-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-left: 5px solid #3498db;
+        }
+        .section-title {
+            color: #2c3e50;
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .chart-container {
+            position: relative;
+            height: 450px;
+            margin: 30px 0;
+            background: #fafafa;
+            border-radius: 8px;
+            padding: 20px;
+        }
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .problem-box {
+            background: #ffebee;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #e74c3c;
+        }
+        .solution-box {
+            background: #e8f5e8;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #27ae60;
+        }
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 30px 0;
+            background: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .stat-box {
+            text-align: center;
+            padding: 15px;
+        }
+        .stat-number {
+            font-size: 28px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        .stat-label {
+            font-size: 14px;
+            color: #7f8c8d;
+            margin-top: 5px;
+        }
+        h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        ul {
+            line-height: 1.6;
+        }
+        .highlight {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #ffc107;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="main-title">REDESIGNS COMPLETOS - Correção de Visualizações Problemáticas</h1>
+    
+    <!-- SEÇÃO 1: DESEMPREGO -->
+    <div class="redesign-section">
+        <h2 class="section-title">REDESIGN 1: Taxa de Desemprego nos EUA (2011)</h2>
+        
+        <div class="comparison-grid">
+            <div class="problem-box">
+                <h3>❌ Problemas do Gráfico Original:</h3>
+                <ul>
+                    <li><strong>Eixo Y truncado:</strong> Começava em 8%, exagerando variações pequenas</li>
+                    <li><strong>Área preenchida desnecessária:</strong> Criava drama visual</li>
+                    <li><strong>Título com viés político:</strong> Focava no presidente, não nos dados</li>
+                    <li><strong>Falta de contexto:</strong> Sem perspectiva histórica</li>
+                    <li><strong>Cores dramáticas:</strong> Vermelho/preto sugeriam crise</li>
+                </ul>
+            </div>
+            <div class="solution-box">
+                <h3>✅ Soluções Aplicadas:</h3>
+                <ul>
+                    <li><strong>Eixo Y a partir de 0%:</strong> Mostra proporção real</li>
+                    <li><strong>Linha simples:</strong> Foco na tendência, não no drama</li>
+                    <li><strong>Título neutro:</strong> Focado nos dados objetivos</li>
+                    <li><strong>Contexto histórico:</strong> Comparação com anos anteriores</li>
+                    <li><strong>Cores profissionais:</strong> Azul neutro e confiável</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="chart-container">
+            <canvas id="unemploymentChart"></canvas>
+        </div>
+        
+        <div class="stats-container">
+            <div class="stat-box">
+                <div class="stat-number">8.95%</div>
+                <div class="stat-label">Média 2011</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">-0.4%</div>
+                <div class="stat-label">Mudança Jan-Nov</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">9.2%</div>
+                <div class="stat-label">Pico (Junho)</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">8.6%</div>
+                <div class="stat-label">Mínimo (Nov)</div>
+            </div>
+        </div>
+        
+        <div class="highlight">
+            <strong>Insight Principal:</strong> A taxa de desemprego em 2011 manteve-se relativamente estável entre 8.6% e 9.2%, com leve tendência de queda no final do ano. As variações mensais foram pequenas (±0.3%), contradizendo a impressão dramática do gráfico original.
+        </div>
+    </div>
+    
+    <!-- SEÇÃO 2: IMPOSTOS GASOLINA -->
+    <div class="redesign-section">
+        <h2 class="section-title">REDESIGN 2: Impostos na Gasolina nos EUA</h2>
+        
+        <div class="comparison-grid">
+            <div class="problem-box">
+                <h3>❌ Problemas do Gráfico Original:</h3>
+                <ul>
+                    <li><strong>Bomba 3D distorce proporções:</strong> Volume não representa dados</li>
+                    <li><strong>Mistura categorias:</strong> Impostos individuais vs. média nacional</li>
+                    <li><strong>Falta contexto:</strong> Sem relação com preço total</li>
+                    <li><strong>Representação não proporcional:</strong> Bomba não escala com valores</li>
+                    <li><strong>Unidades inconsistentes:</strong> Absolutos vs. percentuais</li>
+                </ul>
+            </div>
+            <div class="solution-box">
+                <h3>✅ Soluções Aplicadas:</h3>
+                <ul>
+                    <li><strong>Barras proporcionais:</strong> Representação visual correta</li>
+                    <li><strong>Categorização clara:</strong> Separação entre impostos e outros custos</li>
+                    <li><strong>Contexto completo:</strong> Mostra preço total da gasolina</li>
+                    <li><strong>Escala adequada:</strong> Barras proporcionais aos valores reais</li>
+                    <li><strong>Unidades consistentes:</strong> Todos em USD por galão</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="chart-container">
+            <canvas id="gasChart"></canvas>
+        </div>
+        
+        <div class="stats-container">
+            <div class="stat-box">
+                <div class="stat-number">$0.71</div>
+                <div class="stat-label">Total Impostos</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">18.5%</div>
+                <div class="stat-label">% do Preço Total</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">$3.83</div>
+                <div class="stat-label">Preço Total/Galão</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">$3.12</div>
+                <div class="stat-label">Custo sem Impostos</div>
+            </div>
+        </div>
+        
+        <div class="highlight">
+            <strong>Insight Principal:</strong> Os impostos representam apenas 18.5% do preço da gasolina ($0.71 de $3.83), com a maior parte do custo vindo do petróleo bruto ($2.45) e refino/distribuição ($0.67). Impostos locais ($0.30) são maiores que federais ($0.18).
+        </div>
+    </div>
+    
+    <!-- SEÇÃO 3: COMPARATIVO HORIZONTAL -->
+    <div class="redesign-section">
+        <h2 class="section-title">REDESIGN 3: Comparativo Detalhado - Impostos por Categoria</h2>
+        
+        <div class="chart-container">
+            <canvas id="gasHorizontalChart"></canvas>
+        </div>
+        
+        <div class="highlight">
+            <strong>Vantagem do Redesign Horizontal:</strong> Facilita a leitura dos rótulos e permite comparação mais precisa entre as diferentes categorias de custos. A ordenação por valor ajuda a identificar rapidamente os maiores componentes do preço.
+        </div>
+    </div>
+
+    <script>
+        // Dados para os gráficos
+        const unemploymentData = {
+            labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov'],
+            current: [9.0, 8.9, 8.8, 9.0, 9.1, 9.2, 9.1, 9.1, 9.1, 9.0, 8.6],
+            previous: [9.8, 9.8, 9.9, 9.9, 9.6, 9.4, 9.4, 9.5, 9.5, 9.4, 9.8]
+        };
+
+        const gasData = {
+            labels: ['Petróleo Bruto', 'Refino/Distribuição', 'Impostos Locais', 'Imposto Estadual', 'Imposto Federal'],
+            values: [2.45, 0.67, 0.30, 0.23, 0.18],
+            colors: ['#34495e', '#95a5a6', '#e74c3c', '#f39c12', '#e67e22']
+        };
+
+        // Gráfico de Desemprego
+        const unemploymentCtx = document.getElementById('unemploymentChart').getContext('2d');
+        new Chart(unemploymentCtx, {
+            type: 'line',
+            data: {
+                labels: unemploymentData.labels,
+                datasets: [
+                    {
+                        label: '2010 (Comparação)',
+                        data: unemploymentData.previous,
+                        borderColor: '#bdc3c7',
+                        backgroundColor: 'transparent',
+                        borderWidth: 2,
+                        borderDash: [5, 5],
+                        pointRadius: 0
+                    },
+                    {
+                        label: '2011 (Foco)',
+                        data: unemploymentData.current,
+                        borderColor: '#3498db',
+                        backgroundColor: 'rgba(52, 152, 219, 0.1)',
+                        borderWidth: 3,
+                        pointRadius: 5,
+                        pointBackgroundColor: '#3498db',
+                        pointBorderColor: '#2980b9',
+                        pointBorderWidth: 2,
+                        fill: false
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Taxa de Desemprego nos EUA: Evolução Mensal com Contexto',
+                        font: { size: 18, weight: 'bold' },
+                        color: '#2c3e50'
+                    },
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            usePointStyle: true,
+                            font: { size: 12 }
+                        }
+                    },
+                    tooltip: {
+                        mode: 'index',
+                        intersect: false,
+                        callbacks: {
+                            label: function(context) {
+                                return context.dataset.label + ': ' + context.parsed.y + '%';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 12,
+                        title: {
+                            display: true,
+                            text: 'Taxa de Desemprego (%)',
+                            font: { size: 14, weight: 'bold' }
+                        },
+                        grid: {
+                            color: '#ecf0f1'
+                        },
+                        ticks: {
+                            callback: function(value) {
+                                return value + '%';
+                            }
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Mês',
+                            font: { size: 14, weight: 'bold' }
+                        },
+                        grid: {
+                            display: false
+                        }
+                    }
+                },
+                elements: {
+                    line: {
+                        tension: 0.1
+                    }
+                }
+            }
+        });
+
+        // Gráfico de Gasolina - Barras Empilhadas
+        const gasCtx = document.getElementById('gasChart').getContext('2d');
+        new Chart(gasCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Composição do Preço da Gasolina (por galão)'],
+                datasets: gasData.labels.map((label, index) => ({
+                    label: label,
+                    data: [gasData.values[index]],
+                    backgroundColor: gasData.colors[index],
+                    borderColor: gasData.colors[index],
+                    borderWidth: 1
+                }))
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Composição Real do Preço da Gasolina nos EUA',
+                        font: { size: 18, weight: 'bold' },
+                        color: '#2c3e50'
+                    },
+                    legend: {
+                        position: 'right',
+                        labels: {
+                            usePointStyle: true,
+                            font: { size: 11 }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const value = '$' + context.parsed.y.toFixed(2);
+                                const total = gasData.values.reduce((a, b) => a + b, 0);
+                                const percentage = ((context.parsed.y / total) * 100).toFixed(1);
+                                return context.dataset.label + ': ' + value + ' (' + percentage + '%)';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        stacked: true,
+                        title: {
+                            display: true,
+                            text: 'Componentes do Preço',
+                            font: { size: 14, weight: 'bold' }
+                        }
+                    },
+                    y: {
+                        stacked: true,
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Preço (USD por galão)',
+                            font: { size: 14, weight: 'bold' }
+                        },
+                        ticks: {
+                            callback: function(value) {
+                                return '$' + value.toFixed(2);
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Gráfico Horizontal
+        const gasHorizontalCtx = document.getElementById('gasHorizontalChart').getContext('2d');
+        
+        // Ordenar dados por valor
+        const sortedIndices = gasData.values
+            .map((value, index) => ({ value, index }))
+            .sort((a, b) => a.value - b.value)
+            .map(item => item.index);
+
+        const sortedLabels = sortedIndices.map(i => gasData.labels[i]);
+        const sortedValues = sortedIndices.map(i => gasData.values[i]);
+        const sortedColors = sortedIndices.map(i => 
+            gasData.labels[i].includes('Imposto') ? '#e74c3c' : '#3498db'
+        );
+
+        new Chart(gasHorizontalCtx, {
+            type: 'bar',
+            data: {
+                labels: sortedLabels,
+                datasets: [{
+                    label: 'Custo por Galão',
+                    data: sortedValues,
+                    backgroundColor: sortedColors,
+                    borderColor: sortedColors,
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Componentes do Preço da Gasolina - Comparação Ordenada',
+                        font: { size: 18, weight: 'bold' },
+                        color: '#2c3e50'
+                    },
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const value = '$' + context.parsed.x.toFixed(2);
+                                const total = gasData.values.reduce((a, b) => a + b, 0);
+                                const percentage = ((context.parsed.x / total) * 100).toFixed(1);
+                                return value + ' (' + percentage + '% do preço total)';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Custo (USD por galão)',
+                            font: { size: 14, weight: 'bold' }
+                        },
+                        ticks: {
+                            callback: function(value) {
+                                return '$' + value.toFixed(2);
+                            }
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Componente do Preço',
+                            font: { size: 14, weight: 'bold' }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
