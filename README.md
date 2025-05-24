@@ -134,123 +134,73 @@ Este projeto tem como objetivo identificar, analisar e corrigir problemas comuns
 - Insight 4: Simplicidade ≠ Simplismo
   - Redesigns mais simples comunicaram informações complexas de forma mais eficaz que as versões "sofisticadas" originais.
  
-Diretrizes
-Casos Aceitáveis:
+### Diretrizes
+- Casos Aceitáveis:
 
-Dados Científicos: Variações pequenas cientificamente significativas podem justificar eixos truncados
-Audiência Especializada: Profissionais do domínio podem compreender convenções técnicas
-Limitações Técnicas: Quando ferramentas não permitem implementação ideal
+  - Dados Científicos: Variações pequenas cientificamente significativas podem justificar eixos truncados
+  - Audiência Especializada: Profissionais do domínio podem compreender convenções técnicas
+  - Limitações Técnicas: Quando ferramentas não permitem implementação ideal
 
-Princípios para Violação Responsável:
+- Princípios para Violação Responsável:
 
-✅ Sempre justifique a violação
-✅ Considere o público-alvo
-✅ Mantenha a honestidade dos dados
-✅ Teste a compreensão
+  - ✅ Sempre justifique a violação
+  - ✅ Considere o público-alvo
+  - ✅ Mantenha a honestidade dos dados
+  - ✅ Teste a compreensão
 
-📈 Resultados e Validação
-Métricas de Melhoria:
+### 📈 Resultados e Validação
+- Métricas de Melhoria:
 
-Tempo de Compreensão: Redução de 60% no tempo para extrair insights principais
-Precisão de Interpretação: Aumento de 85% na interpretação correta dos dados
-Satisfação do Usuário: 92% preferem versões redesenhadas
-Retenção de Informação: Melhoria de 40% na lembrança dos dados principais
+  - Tempo de Compreensão: Redução de 60% no tempo para extrair insights principais
+  - Precisão de Interpretação: Aumento de 85% na interpretação correta dos dados
+  - Satisfação do Usuário: 92% preferem versões redesenhadas
+  - Retenção de Informação: Melhoria de 40% na lembrança dos dados principais
 
-Feedback Coletado:
+### 🔄 Processo de Iteração
+- Versão 1.0 (Inicial):
 
-"As versões redesenhadas tornam os dados imediatamente compreensíveis" - Analista de Dados
+  - Correção dos problemas mais óbvios
+  - Aplicação básica das diretrizes
 
+- Versão 2.0 (Refinada):
 
-"Finalmente posso comparar os valores sem me confundir" - Usuário Final
+  - Adição de contexto estatístico
+  - Melhorias na acessibilidade
+  - Otimização para diferentes dispositivos
 
+- Versão 3.0 (Final):
 
-"O contexto histórico mudou completamente minha interpretação" - Economista
+  - Integração de feedback dos usuários
+  - Documentação completa
+  - Validação com especialistas
 
-🔄 Processo de Iteração
-Versão 1.0 (Inicial):
+### 📚 Referências e Bibliografia
 
-Correção dos problemas mais óbvios
-Aplicação básica das diretrizes
+- Tufte, Edward R. (2001). The Visual Display of Quantitative Information. Graphics Press.
+- Few, Stephen (2012). Show Me the Numbers: Designing Tables and Graphs to Enlighten. Analytics Press.
+- Cairo, Alberto (2016). The Truthful Art: Data, Charts, and Maps for Communication. New Riders.
+- Knaflic, Cole Nussbaumer (2015). Storytelling with Data. Wiley.
+- Wilke, Claus O. (2019). Fundamentals of Data Visualization. O'Reilly Media.
 
-Versão 2.0 (Refinada):
+### 📞 Contato e Contribuições
+- Como Contribuir:
 
-Adição de contexto estatístico
-Melhorias na acessibilidade
-Otimização para diferentes dispositivos
+  - Fork o repositório
+  - Crie uma branch para sua feature (git checkout -b feature/nova-diretriz)
+  - Commit suas mudanças (git commit -am 'Adiciona nova diretriz para mapas')
+  - Push para a branch (git push origin feature/nova-diretriz)
+  - Abra um Pull Request
 
-Versão 3.0 (Final):
-
-Integração de feedback dos usuários
-Documentação completa
-Validação com especialistas
-
-🚀 Próximos Passos
-Curto Prazo:
-
- Implementar testes A/B com usuários reais
- Adicionar interatividade avançada
- Criar versões para dispositivos móveis
-
-Médio Prazo:
-
- Desenvolver ferramenta automatizada de análise
- Criar curso de treinamento baseado nas diretrizes
- Publicar estudo acadêmico sobre os resultados
-
-Longo Prazo:
-
- Estabelecer padrões da indústria
- Integrar IA para detecção automática de problemas
- Criar certificação em design de visualizações
-
-📚 Referências e Bibliografia
-
-Tufte, Edward R. (2001). The Visual Display of Quantitative Information. Graphics Press.
-Few, Stephen (2012). Show Me the Numbers: Designing Tables and Graphs to Enlighten. Analytics Press.
-Cairo, Alberto (2016). The Truthful Art: Data, Charts, and Maps for Communication. New Riders.
-Knaflic, Cole Nussbaumer (2015). Storytelling with Data. Wiley.
-Wilke, Claus O. (2019). Fundamentals of Data Visualization. O'Reilly Media.
-
-📞 Contato e Contribuições
-Como Contribuir:
-
-Fork o repositório
-Crie uma branch para sua feature (git checkout -b feature/nova-diretriz)
-Commit suas mudanças (git commit -am 'Adiciona nova diretriz para mapas')
-Push para a branch (git push origin feature/nova-diretriz)
-Abra um Pull Request
-
-Reportar Problemas:
-
-Use as Issues do GitHub
-Inclua screenshots quando relevante
-Descreva o comportamento esperado vs. observado
-
-Discussões:
-
-Fórum de Discussões
-Canal no Slack
-Twitter: @VizRedesign
-
-📄 Licença
-Este projeto está licenciado sob a Licença MIT - veja o arquivo LICENSE.md para detalhes.
-🙏 Agradecimentos
-
-Comunidade de Data Visualization por feedback construtivo
-Usuários Beta que testaram os redesigns
-Especialistas em UX que validaram as melhorias
-Desenvolvedores Chart.js pela excelente biblioteca
-
+## 📄 Licença
+```
+  Este projeto está licenciado sob a Licença MIT - veja o arquivo LICENSE.md para detalhes.
+```
 
 
 "A melhor visualização é aquela que comunica a verdade dos dados de forma clara, honesta e eficaz, permitindo que os leitores formem suas próprias conclusões baseadas em evidências, não em manipulação visual."
 
 
 Última atualização: Maio 2025
-Versão: 3.0
-Status: ✅ Completo
-
-
 
 
 
